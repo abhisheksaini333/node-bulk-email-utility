@@ -31,7 +31,7 @@ This is a bulk email sending utility with following features:
 
 ### Steps for run the hosted version of this utility ###
 
-* The utility is hosted at : `https://thawing-crag-85603.herokuapp.com`
+* The utility is hosted at : <a href="`https://thawing-crag-85603.herokuapp.com" target="_blank">`https://thawing-crag-85603.herokuapp.com`<a>
 * Use any API client like `Postman` to start using the APIs
 
 
@@ -108,3 +108,4 @@ NOTE: you need to set the `authorization` header with the token recieved in the 
 
 * You can use any API client like `Postman` to build / test / run the APIs locally or to access the hosted version.
 * If you want any changes and customization, please feel free to reach me `abhishek_saini@live.com`
+* You might need <a href="https://accounts.google.com/DisplayUnlockCaptcha" target="_blank">`https://accounts.google.com/DisplayUnlockCaptcha`</a> if you are using Gmail as one of the providers for nodemailer
