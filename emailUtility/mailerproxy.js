@@ -49,23 +49,14 @@ module.exports = (req, res, { username }) => {
                 console.log(success_recipients);
                 console.log("failure: ====>");
                 console.log(failure_recipients);
-                if (failure_recipients.length > 0 && fallbackProviderInvoked) {
-                    res.status(200).json({
-                        success: true,
-                        message: "All mails triggered",
-                        failure_recipients,
-                        success_recipients
-                    });
-                }
                 if (failure_recipients.length > 0 && !fallbackProviderInvoked) {
                     console.log('Switching to secondary provider, Invloking fallback transport...');
                     fallbackProviderInvoked = true;
                     // switch to fallback provider
                     new bulkMailer(secondaryTransport, failure_recipients);
                     failure_recipients = [];
-                }
-                if (failure_recipients.length = 0) {
-                    res.status(200).json({
+                } else {
+                    return res.status(200).json({
                         success: true,
                         message: "All mails triggered",
                         failure_recipients,
@@ -118,7 +109,7 @@ module.exports = (req, res, { username }) => {
         });
     }
     if (!detailsRequiredInResponse) {
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "All mails triggered",
         });
