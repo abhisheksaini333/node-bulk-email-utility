@@ -1,9 +1,9 @@
-# Bulk Emaail sending utility Using Node.js (Nodemailer and Mailgun) #
+# Bulk Email sending utility Using Node.js (Nodemailer and Mailgun) #
 
 This is a bulk email sending utility with following features:
 
 * It is a node application which sends bulk emails, available as micro-service REST API
-* It uses two mail sending providers (one primary and other secondary as a fallback) nodemailer and mailgun.
+* It uses two mail sending providers (one primary and other one secondary as a fallback) nodemailer and mailgun.
 * It sends email irrespective of one provider going down, the other one works as a fallback.
 * You can get a complete summary of failed and successfull emails sent.
 * Sends emails through a secure end point with `jwt`.
@@ -17,12 +17,16 @@ This is a bulk email sending utility with following features:
 * Clone this code/repo: `git clone https://github.com/abhisheksaini333/node-bulk-email-utility.git`
 * Install the packages: `npm install`
 * To run the utility: `npm start`
-* You will get a message on the console: `Server up and running on port 5000 !`
-* The API can be accessed at: `localhost:5000`
-* To test if the is API up and running, hit the following URL: `http://localhost:5000/message`
-* You will get the following response: `{"message":"This is the test message"}`
+* You will see a message on the console: `Server up and running on port 5000 !`
+* Wonderful! your utility is up and running locally and ready to use.
+* The APIs can be accessed at: `localhost:5000`
+* To test if the server is up and running, hit the following URL: `http://localhost:5000/message`
+* You must get the following response: `{"message":"This is the test message"}`
+* That means your local server is running fine.
 * To run the test cases: `npm test`
+* I have tried to do the basic test coverage.
 * Now you are all set to modify this code according to your needs.
+* For development puposes, you can start the server with nodemon using: `npm run server`
 
 
 ### Steps for run the hosted version of this utility ###
@@ -47,7 +51,7 @@ But you can definitly add your custom logic to authenticate the user from your D
 
 * POST `api/users/sendMail`: after fetching the `token` in the above step, you can start sending the bulk emails using the following sample request object:
 NOTE: you need to set the `authorization` header with the token recieved in the login step. I have mentioned the significance and required fields below against each property of the request object.
-```json
+```json5 jsonc
 {
     "providers": {   // Required field
         "mailgun": {   // Required field
@@ -97,10 +101,10 @@ NOTE: you need to set the `authorization` header with the token recieved in the 
 * use `Postman` client to access the APIs
 * Fetch Authentication token as mentioned above using the `/api/users/login` end point
 * Set `authorization` header with the token received from the above response, for the subsequent request
-* Trigger bulk emails as mentioned above using the `api/users/sendMail` end point and using the request object.
+* Trigger bulk emails as mentioned above using the `api/users/sendMail` end point and the request object.
 
 
 ### Support (Help/Customization) ###
 
-* You can use any API client like `Postman` to build / test / run the APIs locally or to access the hosted version of it
+* You can use any API client like `Postman` to build / test / run the APIs locally or to access the hosted version.
 * If you want any changes and customization, please feel free to reach me `abhishek_saini@live.com`
