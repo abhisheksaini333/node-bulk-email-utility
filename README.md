@@ -31,7 +31,7 @@ This is a bulk email sending utility with following features:
 
 ### Steps for run the hosted version of this utility ###
 
-* The utility is hosted at : ``
+* The utility is hosted at : `https://thawing-crag-85603.herokuapp.com`
 * Use any API client like `Postman` to start using the APIs
 
 
