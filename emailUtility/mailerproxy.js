@@ -56,12 +56,15 @@ module.exports = (req, res, { username }) => {
                     new bulkMailer(secondaryTransport, failure_recipients);
                     failure_recipients = [];
                 } else {
-                    return res.status(200).json({
+                    let response = {
                         success: true,
                         message: "All mails triggered",
-                        failure_recipients,
-                        success_recipients
-                    });
+                    };
+                    if (detailsRequiredInResponse) {
+                        response.failure_recipients = failure_recipients;
+                        response.success_recipients = success_recipients;
+                    }
+                    return res.status(200).json(response);
                 }
             });
         };
@@ -106,12 +109,6 @@ module.exports = (req, res, { username }) => {
         return res.status(400).json({
             success: false,
             message: JSON.stringify(ex)
-        });
-    }
-    if (!detailsRequiredInResponse) {
-        return res.status(200).json({
-            success: true,
-            message: "All mails triggered",
         });
     }
 };
