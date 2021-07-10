@@ -31,7 +31,7 @@ This is a bulk email sending utility with following features:
 
 ### Steps for run the hosted version of this utility ###
 
-* The utility is hosted at : <a href="https://thawing-crag-85603.herokuapp.com" target="_blank">`https://thawing-crag-85603.herokuapp.com`</a>
+* The utility is hosted at : <a href="https://stormy-stream-92408.herokuapp.com" target="_blank">`https://stormy-stream-92408.herokuapp.com`</a>
 * Use any API client like `Postman` to start using the APIs
 
 
