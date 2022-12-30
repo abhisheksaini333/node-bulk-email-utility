@@ -35,6 +35,6 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "co-mocha": "^1.2.2",
-    "mocha": "^7.2.0"
+    "mocha": "^10.2.0"
   }
 }
